@@ -1,0 +1,142 @@
+/* ------ Global Main Style ------ */
+
+main {
+    padding: 0.5vw 2vw 0 2vw;
+    margin: 1px 20px 15px;
+
+	font-size: 24px;
+	font-weight: bolder;
+
+	color: black;	
+	border-radius: 2rem;
+}
+
+/* ------ Hero Div Style ------ */
+
+.hero-section {
+	min-height: 93vh;
+    margin-bottom: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+	overflow: hidden;
+	box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.hero-content {
+    position: relative;
+    min-width: 424px;
+
+	padding: 51px 67px;
+	grid-column: span 4;
+
+    color: #fff;
+	background: #232323;
+	
+	text-align: left;	
+}
+
+.hero-content::after {
+    position: absolute;
+	content: "";
+
+	width: 100%;
+	height: 100%;
+
+    right: -80px;
+	top: 0;
+
+	background: #232323;
+}
+
+.hero-content>* {
+	position: relative;
+	z-index: 1;
+}
+
+.hero-headline {
+	font-size: 6rem;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.hero-text {
+    padding: 0;
+    margin-top: 57px;
+    width: 146%;    
+	font-weight: normal;
+}
+
+.hero-img {
+	grid-column: span 8;
+}
+
+.hero-img img {
+    padding: 0;
+    display: block;
+
+	width: 100%;
+	height: 100%;
+}
+
+.hero-section>.btn-signup {
+	display: none;
+}
+
+/* ------ Button ------ */
+
+.btn-signup {
+    padding: 12px 35px;
+	margin-top: 59px;
+
+	font-size: 25px;
+    font-weight: 500;
+
+	text-transform: capitalize;
+}
+
+/* ------ Responsive ------ */
+
+@media screen and (max-width: 800px) {
+	.hero-section {
+		display: block;
+		box-shadow: unset;
+	}
+
+	.hero-content {
+		padding: 20px;
+
+		color: #000;
+        background: #fff;		
+	}
+
+	.hero-content::after {
+		content: unset;
+	}
+
+	.hero-content .btn-signup {
+		display: none;
+	}
+
+	.hero-headline {
+		font-size: 4.5rem;
+		white-space: normal;
+	}
+
+	.hero-text {
+		width: unset;
+		font-size: 1.5rem;
+	}
+
+	.hero-img img {
+        margin-top: 40px;
+		border-radius: 10px;		
+	}
+
+	.hero-section>.btn-signup {
+        margin: 32px auto 10px;
+		display: block;
+	}
+}

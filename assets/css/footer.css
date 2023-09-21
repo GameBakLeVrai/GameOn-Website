@@ -1,0 +1,20 @@
+/* ------ Footer ------ */
+
+footer {
+    margin: 30px 0 30px;
+    padding: 0 10px 0;
+}
+
+.copyrights {	
+	font-size: 1rem;	
+	font-weight: bolder;
+
+    color: #fe142f;
+}
+
+@media screen and (max-width: 800px) {
+    .copyrights {
+		margin-top: 50px;
+		text-align: center;
+	}
+}

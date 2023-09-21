@@ -1,0 +1,56 @@
+/* ------ Import Font ------ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto');
+
+/* ------ Setup Global ------ */
+
+:root {
+	--font-default: "DM Sans", Arial, Helvetica, sans-serif;
+	--modal-duration: 0.8s;
+}
+
+* {	
+	margin: 0;
+	padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1300px;
+
+	display: flex;
+	flex-direction: column;
+
+	font-family: var(--font-default);
+	font-size: 18px;
+}
+
+p {
+	margin-bottom: 0;
+	padding: 0.5vw;
+}
+
+img {
+	padding-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ------ Buttons Style ------ */
+
+.button {
+	cursor: pointer;
+
+	color: #fff;
+	background: #fe142f;
+
+	border: none;
+	border-radius: 7px;
+}
+
+.button:hover {
+	background: #3876ac;
+}
