@@ -21,7 +21,7 @@
 	float: left;
 	
 	color: #000000;
-	text-align: center;	
+	text-align: center;
 	
 	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
@@ -30,7 +30,7 @@
 .topnav a:hover {	
 	color: #ffffff;
 	background-color: #ff0000;
-
+	text-decoration: underline;
 	border-radius: 15px;
 }
 
