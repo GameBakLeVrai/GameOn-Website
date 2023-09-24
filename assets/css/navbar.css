@@ -37,7 +37,6 @@
 .topnav a.active {	
 	color: #ffffff;
 	background-color: #ff0000;
-
 	border-radius: 15px;
 }
 
@@ -53,8 +52,14 @@
 	}
 
 	.topnav a.icon {
-		float: right;
 		display: block;
+		float: right;
+		
+		color: #ff0000;
+	}
+
+	.topnav a.icon:hover {
+		color: white;
 	}
 }
 
@@ -70,8 +75,8 @@
 	}
 
 	.topnav.responsive a {
-		float: none;
 		display: block;
+		float: none;		
 		text-align: left;
 	}
 }
@@ -82,8 +87,8 @@
 	}
 
 	.topnav a.icon {
-		float: right;
 		display: block;
+		float: right;		
 		margin-top: -15px;
 	}
 }
