@@ -12,6 +12,8 @@ footer {
     color: #fe142f;
 }
 
+/* ------ Responsive ------ */
+
 @media screen and (max-width: 800px) {
     .copyrights {
 		margin-top: 50px;
