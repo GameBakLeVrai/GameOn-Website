@@ -11,7 +11,10 @@ const submit = document.getElementById("form");
 
 
 // Functions Declaration
-const launchModal = () => modalbg.style.display = "block"; // launch modal form
+const launchModal = () => {
+	window.scrollTo(0, 0);
+	modalbg.style.display = "block";
+} // launch modal form
 const closeModal = () => modalbg.style.display = "none"; // close modal form
 
 const editNav = () => {

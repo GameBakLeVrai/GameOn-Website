@@ -14,7 +14,6 @@ main {
 /* ------ Hero Div Style ------ */
 
 .hero-section {
-	min-height: 93vh;
     margin-bottom: 10px;
 
     display: grid;
@@ -106,7 +105,7 @@ main {
 	}
 
 	.hero-content {
-		padding: 20px;
+		padding: unset;
 
 		color: #000;
         background: #fff;		
@@ -121,13 +120,17 @@ main {
 	}
 
 	.hero-headline {
-		font-size: 4.5rem;
-		white-space: normal;
+		font-size: 40px;
+		font-weight: 500;
 	}
 
 	.hero-text {
+		margin-top: 30px;
 		width: unset;
-		font-size: 1.5rem;
+
+		font-size: 13px;
+		font-weight: 400;
+		white-space: initial;
 	}
 
 	.hero-img img {
@@ -137,6 +140,12 @@ main {
 
 	.hero-section>.btn-signup {
         margin: 32px auto 10px;
+		padding: 10px 50px;
 		display: block;
+
+		font-size: 18px;
+		font-weight: 500;
+
+		border-radius: 10px;
 	}
 }

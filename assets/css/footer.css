@@ -18,3 +18,13 @@ footer {
 		text-align: center;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	footer {
+		margin: 0 0 30px;
+	}
+
+	.copyrights {
+		margin-top: 0;
+	}
+}

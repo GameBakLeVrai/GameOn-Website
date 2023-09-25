@@ -81,7 +81,7 @@ label {
 	display: inline-block;
 
 	font-family: var(--font-default);
-	font-size: 17px;
+	font-size: 14px;
 	font-weight: normal;	
 }
 
@@ -338,8 +338,10 @@ input[data-error]::after {
 
 /* custom select end */
 .text-label {
-	font-weight: normal;
-	font-size: 16px;
+	margin-top: 5px;
+	
+	font-size: 14px;
+	font-weight: 400;
 }
 
 .btn-submit {
@@ -360,5 +362,15 @@ input[data-error]::after {
 
 	to {
 		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.bground {
+		top: 70px;		
+	}
+
+	.content {
+		margin: unset;
 	}
 }

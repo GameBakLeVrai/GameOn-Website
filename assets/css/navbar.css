@@ -1,8 +1,11 @@
 /* ------ Navbar ------ */
 
 .topnav {
-	overflow: hidden;
 	margin: 40px;
+	
+	display: flex;
+	justify-content: space-between;
+	
 }
 
 .header-logo {
@@ -76,5 +79,16 @@
 		display: block;
 		float: none;		
 		text-align: left;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.topnav {
+		margin: 10px 30px;
+	}
+	
+	.header-logo img {
+		margin-top: 15px;
+		width: 130px;
 	}
 }
