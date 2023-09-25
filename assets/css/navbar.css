@@ -39,6 +39,7 @@
 
 .topnav a.active {	
 	color: #ffffff;
+	text-decoration: underline;
 	background-color: #ff0000;
 	border-radius: 15px;
 }
