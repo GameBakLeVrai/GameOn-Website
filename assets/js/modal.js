@@ -4,7 +4,7 @@ const menu_nav = document.getElementById("nav_menu");
 const modalbg = document.querySelector(".bground");
 const modalSuccess = document.querySelector(".modal-success");
 const modalBtn = document.querySelectorAll(".btn-signup");
-const modalCloseBtn = document.querySelector(".close");
+const modalCloseBtn = document.querySelectorAll(".closeModal");
 
 const formData = document.querySelectorAll(".formData");
 const submit = document.getElementById("form");
@@ -18,7 +18,7 @@ const editNav = () => {
 	let x = document.getElementById("myTopnav");
 
 	(x.className === "topnav") ? x.className += " responsive" : x.className = "topnav";
-	(x.className.includes("responsive")) ? menu_nav.style = "color: white;" : menu_nav.style = "color: #ff0000";
+	(x.className.includes("responsive")) ? menu_nav.style = "color: white;" : menu_nav.style = "";
 }
 
 const addErrorMessage = (node, number, message, border) => {
@@ -94,6 +94,8 @@ const checkData = (e) => {
 
 // Functions Call
 menu_nav.addEventListener("click", editNav);
+
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-modalCloseBtn.addEventListener("click", closeModal);
+modalCloseBtn.forEach((btn) => btn.addEventListener("click", closeModal));
+
 submit.addEventListener("submit", (e) => checkData(e));
