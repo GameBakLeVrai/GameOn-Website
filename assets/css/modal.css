@@ -1,5 +1,13 @@
 /* Modal form */
 
+.error {
+	font-size: 10px;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	
+	color: #FF4E60;
+}
+
 .bground {
 	position: fixed;
 	display: none;

@@ -20,19 +20,35 @@ const editNav = () => {
 	(x.className.includes("responsive")) ? menu_nav.style = "color: white;" : menu_nav.style = "color: #ff0000";
 }
 
+const addErrorMessage = (node, number, message, border) => {
+	if(border) node.style.border = "2px solid #FF4E60";
+
+	const nodeP = [...document.querySelectorAll(".formData")[number].childNodes].filter((n) => n.tagName === "P");
+	if(nodeP.length === 0) {
+		const errorParagraph = document.createElement("p");
+		errorParagraph.className = "error";
+		errorParagraph.textContent = message;
+	
+		document.querySelectorAll(".formData")[number].appendChild(errorParagraph);
+	}
+}
+
 const checkData = (e) => {
 	e.preventDefault();
 
-	const firstname = document.querySelectorAll(".formData")[0].querySelector("input").value;
-	const surname = document.querySelectorAll(".formData")[1].querySelector("input").value;
-	const email = document.querySelectorAll(".formData")[2].querySelector("input").value;
-	const birthdate = document.querySelectorAll(".formData")[3].querySelector("input").value;
-	const quantity = document.querySelectorAll(".formData")[4].querySelector("input").value;
+	const firstname = document.querySelectorAll(".formData")[0].querySelector("input");
+	const surname = document.querySelectorAll(".formData")[1].querySelector("input");
+	const email = document.querySelectorAll(".formData")[2].querySelector("input");
+	const birthdate = document.querySelectorAll(".formData")[3].querySelector("input");
+	const quantity = document.querySelectorAll(".formData")[4].querySelector("input");
 	const radio = document.querySelectorAll(".formData")[5].querySelectorAll("input[type='radio']");
 	const generalConditions = document.querySelectorAll(".formData")[6].querySelector("input"); // querySelector("input") Select automatically the first element
 
-	if(firstname === "" || firstname.length < 2) return false;
-	if(surname === "" || surname.length < 2) return false;
+	if(firstname.value === "" || firstname.value.length < 2)
+		return addErrorMessage(firstname, 0, "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", true);
+
+	if(surname.value === "" || surname.value.length < 2)
+		return addErrorMessage(surname, 1, "Veuillez entrer 2 caractères ou plus pour le champ du nom.", true);
 
 	// ^ : Début de la chaîne
 	// [a-zA-Z0-9._-]+ : Nom d'utilisateur de l'adresse e-mail
@@ -51,15 +67,22 @@ const checkData = (e) => {
 	// [a-zA-Z] : Lettres (majuscules et minuscules)
 	// {2,4} : Longueur de 2 à 4 caractères
 	// $ : Fin de la chaîne
-	if(!(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))) return false;
+	if(!(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email.value)))
+		return addErrorMessage(email, 2, "Vous devez entrer une adresse email valide.", true);
+
+	if(birthdate.value === "")
+		return addErrorMessage(birthdate, 3, "Vous devez entrer votre date de naissance.", true);
 
 	// [0-9]+ Correspond à un ou plusieurs nombres
-	if(!(/^[0-9]+$/.test(quantity))) return false;
+	if(!(/^[0-9]+$/.test(quantity.value)))
+		return addErrorMessage(quantity, 4, "Vous devez entrer un nombre entre 0 et 99.", true);
 
 	const radioChecked = [...radio].filter((r) => r.checked === true);
-	if(radioChecked.length === 0) return false;
+	if(radioChecked.length === 0)
+		return addErrorMessage(radio, 5, "Vous devez choisir au moins une option.", false);
 
-	if(!generalConditions.checked) return false;
+	if(!generalConditions.checked)
+		return addErrorMessage(generalConditions, 6, "Vous devez vérifier que vous acceptez les termes et conditions.", false);
 
 	submit.submit();
 }
