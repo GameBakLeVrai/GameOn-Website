@@ -106,6 +106,7 @@ main {
 
 	.hero-content {
 		padding: unset;
+		min-width: unset;
 
 		color: #000;
         background: #fff;		
