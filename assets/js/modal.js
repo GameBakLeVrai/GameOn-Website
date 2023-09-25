@@ -2,6 +2,7 @@
 const menu_nav = document.getElementById("nav_menu");
 
 const modalbg = document.querySelector(".bground");
+const modalSuccess = document.querySelector(".modal-success");
 const modalBtn = document.querySelectorAll(".btn-signup");
 const modalCloseBtn = document.querySelector(".close");
 
@@ -84,7 +85,11 @@ const checkData = (e) => {
 	if(!generalConditions.checked)
 		return addErrorMessage(generalConditions, 6, "Vous devez vérifier que vous acceptez les termes et conditions.", false);
 
-	submit.submit();
+	modalSuccess.style.display = "flex";
+
+	setTimeout(() => {
+		submit.submit();
+	}, 1000);
 }
 
 // Functions Call
